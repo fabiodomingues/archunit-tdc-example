@@ -1,0 +1,21 @@
+plugins {
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation "com.sparkjava:spark-core:2.8.0"
+    implementation "com.eclipsesource.minimal-json:minimal-json:0.9.4"
+    implementation "org.slf4j:slf4j-simple:1.8.0-beta4"
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'com.tngtech.archunit:archunit-junit4:0.10.2'
+}
