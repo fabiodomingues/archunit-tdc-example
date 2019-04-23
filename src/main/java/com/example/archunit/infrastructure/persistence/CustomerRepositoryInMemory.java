@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.example.archunit.domain.customer.Customer;
 import com.example.archunit.domain.customer.CustomerRepository;
-import com.example.archunit.domain.customer.CustomerService;
 
 public class CustomerRepositoryInMemory implements CustomerRepository {
 

@@ -1,4 +1,4 @@
-package com.example.archunit.application.api;
+package com.example.archunit.application.controllers;
 
 import static com.example.archunit.infrastructure.json.CustomerJson.jsonFor;
 import static org.eclipse.jetty.http.HttpStatus.CREATED_201;
@@ -15,11 +15,11 @@ import com.example.archunit.domain.customer.CustumerCreateData;
 import spark.Request;
 import spark.Response;
 
-public class CustomersResource {
+public class CustomerController {
 
 	private CustomerService customerService;
 
-	public CustomersResource(CustomerService customerService) {
+	public CustomerController(CustomerService customerService) {
 		this.customerService = customerService;
 	}
 

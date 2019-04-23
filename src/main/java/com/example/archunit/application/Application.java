@@ -14,7 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.eclipsesource.json.JsonObject;
-import com.example.archunit.application.api.CustomersResource;
+import com.example.archunit.application.controllers.CustomerController;
 import com.example.archunit.domain.customer.CustomerService;
 import com.example.archunit.domain.shared.DomainException;
 import com.example.archunit.infrastructure.persistence.CustomerRepositoryInMemory;
@@ -23,7 +23,7 @@ import spark.Spark;
 
 public class Application {
 	
-    private static Logger logger = LoggerFactory.getLogger(Application.class);
+    private static final Logger logger = LoggerFactory.getLogger(Application.class);
     
     private static final String API_NOT_IMPLEMENTED = "API not implemented.";
     private static final String INTERNAL_SERVER_ERROR = "Internal server error.";
@@ -67,10 +67,10 @@ public class Application {
 		CustomerRepositoryInMemory customerRepository = new CustomerRepositoryInMemory();
 		CustomerService customerService = new CustomerService(customerRepository);
 		
-		CustomersResource customersResource = new CustomersResource(customerService);
+		CustomerController customerController = new CustomerController(customerService);
 		
-		get("customers/:id", (req, res) -> customersResource.getCustomer(req, res));
-		post("customers", (req, res) -> customersResource.createCustomer(req, res));
+		get("customers/:id", (req, res) -> customerController.getCustomer(req, res));
+		post("customers", (req, res) -> customerController.createCustomer(req, res));
 	}
 
     private void configureInternalServerError() {

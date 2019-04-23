@@ -19,7 +19,6 @@ public class CustomerService {
 	}
 	
 	public Customer createCustomer(CustumerCreateData custumerCreateData) throws CustomerNameCannotBeNullOrEmptyException {
-		new CustomerService2();
 		return customerRepository.save(new Customer(custumerCreateData.getName()));
 	}
 	

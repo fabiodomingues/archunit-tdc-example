@@ -1,4 +1,4 @@
-package com.example.archunit.application.api;
+package com.example.archunit.application.common;
 
 public class ErrorResponse {
 	
