@@ -14,7 +14,7 @@ import com.tngtech.archunit.lang.ArchRule;
 public class CyclicDpendencyRulesTest {
 
     @ArchTest
-    public static final ArchRule interfaces_must_not_be_placed_in_implementation_packages =
+    public static final ArchRule no_cycles_dependencies =
     		slices().matching("..(*)..")
             		.should().beFreeOfCycles();
 }
